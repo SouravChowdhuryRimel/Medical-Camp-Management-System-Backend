@@ -1,0 +1,2088 @@
+{
+	"info": {
+		"_postman_id": "9b033102-750a-47c0-b9a6-2ac4fc3f857b",
+		"name": "docmnk",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "48189953",
+		"_collection_link": "https://rimelchowdhury01-863631.postman.co/workspace/Softvance~9da41cda-7f34-404e-914a-3401dcc719cb/collection/48189953-9b033102-750a-47c0-b9a6-2ac4fc3f857b?action=share&source=collection_link&creator=48189953"
+	},
+	"item": [
+		{
+			"name": "account",
+			"item": [
+				{
+					"name": "Register Account",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "multipart/form-data",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "sourav",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "souravchowdhury6519@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "Sc@123456",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/C:/Sourav Chowdhury/image/sourav.jpg"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{local}}/api/v1/auth/register",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Verified account",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InJpbWVsY2hvd2RodXJ5MDFAZ21haWwuY29tIiwiaWF0IjoxNzYyMTY0NjQ0LCJleHAiOjE3NjIxNjQ5NDR9.fQe3519yuN8Cugdzqrsvc7uX7Sz63Nihdu1CSGCjB9Y\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{local}}/api/v1/auth/verified-account",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"verified-account"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Verified account for OTP",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"email\": \"souravchowdhury6519@gmail.com\",\r\n  \"otp\": \"223478\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{local}}/api/v1/auth/verify-otp",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"verify-otp"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "LogIn",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"souravchowdhury6519@gmail.com\",\r\n    \"password\": \"Sc@1234\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{local}}/api/v1/auth/login",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Refresh token",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{local}}/api/v1/auth/refresh-token",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"refresh-token"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get single Account",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InNvdXJhdmNob3dkaHVyeTY1MTlAZ21haWwuY29tIiwicm9sZSI6IlVTRVIiLCJpYXQiOjE3NjQyNDM2OTcsImV4cCI6MTc2NTUzOTY5N30.AG2P-BVsrDuthRyOZ-6cPn-BSkvnGOUTM24c88qt5HI",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{local}}/api/v1/auth/me",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"me"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Change password",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InJpbWVsY2hvd2RodXJ5MDFAZ21haWwuY29tIiwicm9sZSI6IlVTRVIiLCJpYXQiOjE3NjIxNDc5MTMsImV4cCI6MTc2MzQ0MzkxM30.kDHwDBGhDE2JmhJzaTnofWvsjDrLI8RXmqDzfQc56oc",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"oldPassword\": \"\",\r\n    \"newPassword\": \"\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{local}}/api/v1/auth/change-password",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"change-password"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Forgot password",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"rimelchowdhury01@gmail.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{local}}/api/v1/auth/forgot-password",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"forgot-password"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Reset password",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InJpbWVsY2hvd2RodXJ5MDFAZ21haWwuY29tIiwicm9sZSI6IlVTRVIiLCJpYXQiOjE3NjIxNTk3MDQsImV4cCI6MTc2MzQ1NTcwNH0.Ld2nJwCePc-VQlO5-pWZTZuU9Z-P3kHD5CLqj8Vs13c",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InJpbWVsY2hvd2RodXJ5MDFAZ21haWwuY29tIiwicm9sZSI6IlVTRVIiLCJpYXQiOjE3NjIxNTk3NDksImV4cCI6MTc2MjE2MDY0OX0.xNiq__eswSuFJtPVcrVE9e-fFMGriVEvHCoH2TjAfS8&email=rimelchowdhury01@gmail.com\",\r\n    \"email\": \"rimelchowdhury01@gmail.com\",\r\n    \"newPassword\": \"Sc123456#\"\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{local}}/api/v1/auth/reset-password",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"reset-password"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Reset password OTP",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InN1cGVyYWRtaW5AZ21haWwuY29tIiwicm9sZSI6IlN1cGVyQWRtaW4iLCJpYXQiOjE3NjMxOTQ4MzIsImV4cCI6MTc2NDQ5MDgzMn0.qSQxvQ5NC3GAfO3PZxa6KzlHdWy3ClWYefvzJnx-5V8",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"email\": \"rimelchowdhury01@gmail.com\",\r\n  \"otp\": \"307675\",\r\n  \"newPassword\": \"SC#12345\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{local}}/api/v1/auth/reset-password-otp",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"reset-password-otp"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "New verification link send",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"rimelchowdhury01@gmail.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{local}}/api/v1/auth/new-verification-link",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"new-verification-link"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Account",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"email\": \"a8f1szsbdx@illubd.com\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{local}}/api/v1/auth/delete-account",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"delete-account"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Patient Registration form",
+			"item": [
+				{
+					"name": "Patient create",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "multipart/form-data",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbWluQGdtYWlsLmNvbSIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTc2MjY4MzM0MywiZXhwIjoxNzYzOTc5MzQzfQ.tSKbVctyD3br8WNiJK8ESN_ERMtQ-qnP1m_2GmqMr-4",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "sourav",
+									"type": "text"
+								},
+								{
+									"key": "gender",
+									"value": "Male",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "dateOfBirth",
+									"value": "2000-12-20",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "age",
+									"value": "24",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "number",
+									"value": "+8801521522182",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "email",
+									"value": "rimelchowdhury01@gmail.com",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "occupation",
+									"value": "Engineer",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "address",
+									"value": "Dhaka",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "medicalHistory",
+									"value": "{\n  \"diabetesMellitus\": {\n    \"isChecked\": true,\n    \"durationYears\": 5,\n    \"treatmentStatus\": \"On Treatment\",\n    \"lastCheckupDate\": \"2024-01-15\"\n  },\n  \"hypertension\": {\n    \"isChecked\": false,\n    \"durationYears\": 0\n  },\n  \"dyslipidemia\": {\n    \"isChecked\": true,\n    \"durationYears\": 2,\n    \"treatmentStatus\": \"On Treatment\"\n  },\n  \"drugAllergies\": \"Penicillin\",\n  \"foodAllergies\": \"Shellfish\",\n  \"otherComorbidities\": \"None\",\n  \"surgicalHistory\": \"Appendectomy in 2015\",\n  \"currentActiveMedications\": \"Metformin 500mg, Atorvastatin 20mg\"\n}",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "lifestyleAndSubstanceUse",
+									"value": "{\n  \"smokingHistory\": {\n    \"status\": \"Former Smoker\",\n    \"cigarettes\": {\n      \"numberOfCigarettesPerDay\": 10,\n      \"yearsSmoked\": 8,\n      \"packYears\": 4\n    }\n  },\n  \"alcoholUse\": {\n    \"unitsPerWeek\": 5\n  },\n  \"tobaccoChewing\": [\n    {\n      \"type\": \"Chewing Tobacco\",\n      \"amountPerDay\": 2,\n      \"yearsOfUse\": 3\n    }\n  ]\n}",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "dietaryActivityAssessment",
+									"value": "{\n  \"dietPreference\": \"Non-Vegetarian\",\n  \"foodAllergies\": [\"Peanuts\", \"Shellfish\"],\n  \"medicationAllergies\": [\"Penicillin\"],\n  \"currentDietary\": {\n    \"typicalMeals\": \"Breakfast: Eggs and toast, Lunch: Chicken rice, Dinner: Fish and vegetables\"\n  },\n  \"physicalActivity\": {\n    \"activityLevel\": \"Moderately Active\",\n    \"sleepHoursPerNight\": 7,\n    \"hasMobilityLimitations\": false,\n    \"interestedInGuidedExercise\": true,\n    \"exerciseFrequency\": \"3 times per week\",\n    \"exerciseType\": \"Walking, Swimming\"\n  }\n}",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "clinicalAssessment",
+									"value": "{\n  \"presentingComplaint\": \"Pain in right leg when walking\",\n  \"vitalsBiometrics\": {\n    \"weight\": 75,\n    \"height\": 175,\n    \"bmi\": 24.5,\n    \"temperature\": 36.8,\n    \"bpSystolic\": 120,\n    \"bpDiastolic\": 80,\n    \"heartRate\": 72,\n    \"spO2\": 98,\n    \"rbs\": 110\n  },\n  \"arterialAssessment\": {\n    \"affectedLimb\": \"Right\",\n    \"symptoms\": {\n      \"restPain\": false,\n      \"claudication\": true\n    },\n    \"skinChanges\": {\n      \"pallor\": true,\n      \"hairLoss\": true,\n      \"nailChanges\": true\n    },\n    \"peripheralPulses\": {\n      \"right\": {\n        \"femoral\": \"Normal\",\n        \"popliteal\": \"Diminished\",\n        \"dorsalisPedis\": \"Absent\",\n        \"posteriorTibial\": \"Absent\"\n      },\n      \"left\": {\n        \"femoral\": \"Normal\",\n        \"popliteal\": \"Normal\",\n        \"dorsalisPedis\": \"Normal\",\n        \"posteriorTibial\": \"Normal\"\n      }\n    },\n    \"ankleBrachialIndex\": {\n      \"right\": 0.6,\n      \"left\": 1.1\n    },\n    \"abiTestPerformed\": true\n  },\n  \"venousAssessment\": {\n    \"varicoseVeinsPresent\": false,\n    \"edemaPresent\": true,\n    \"skinChanges\": {\n      \"hyperpigmentation\": true\n    }\n  },\n  \"lymphaticAssessment\": {\n    \"lymphedemaPresent\": false,\n    \"stemmersSign\": {\n      \"right\": false,\n      \"left\": false\n    }\n  },\n  \"sensoryTesting\": {\n    \"monofilamentTestPerformed\": true,\n    \"vibrationSense\": true,\n    \"proprioception\": true\n  },\n  \"footAssessment\": {\n    \"deformities\": {\n      \"hammerToes\": false,\n      \"bunions\": true\n    },\n    \"nailCondition\": \"Normal\",\n    \"appropriateFootwear\": true\n  },\n  \"ulcerAssessment\": {\n    \"ulcerPresent\": false\n  },\n  \"investigations\": {\n    \"hba1c\": 6.2,\n    \"toePressure\": 45,\n    \"tcpo2\": 55\n  }\n}",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "previousReport",
+									"type": "file",
+									"src": "/C:/Sourav Chowdhury/image/file-sample_150kB.pdf",
+									"disabled": true
+								},
+								{
+									"key": "abiReport",
+									"type": "file",
+									"src": "/C:/Sourav Chowdhury/image/file-sample_150kB.pdf",
+									"disabled": true
+								},
+								{
+									"key": "tcpo2Report",
+									"type": "file",
+									"src": "/C:/Sourav Chowdhury/image/file-sample_150kB.pdf",
+									"disabled": true
+								},
+								{
+									"key": "monofilamentReport",
+									"type": "file",
+									"src": "/C:/Sourav Chowdhury/image/file-sample_150kB.pdf",
+									"disabled": true
+								},
+								{
+									"key": "vibrothermReport",
+									"type": "file",
+									"src": "/C:/Sourav Chowdhury/image/images.jpg",
+									"disabled": true
+								},
+								{
+									"key": "report",
+									"type": "file",
+									"src": "/C:/Sourav Chowdhury/image/file-sample_150kB.pdf",
+									"disabled": true
+								},
+								{
+									"key": "disease",
+									"value": "kidney disease",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "diagnosisDate",
+									"value": "2025-11-05",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "hasAllergies",
+									"value": "No",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "isNeed",
+									"value": "Yes",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "",
+									"type": "file",
+									"src": [],
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "{{local}}/api/v1/patient-registration/create",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"patient-registration",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Patient create Copy",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "multipart/form-data",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbWluQGdtYWlsLmNvbSIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTc2MjY4MzM0MywiZXhwIjoxNzYzOTc5MzQzfQ.tSKbVctyD3br8WNiJK8ESN_ERMtQ-qnP1m_2GmqMr-4",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "FullName",
+									"value": "Sourav Chowdhury",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "Gender",
+									"value": "Male",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "Date of Birth",
+									"value": "2000-12-20",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "Age",
+									"value": "25",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "PhoneNumber",
+									"value": "+8801712906519",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "Occupation",
+									"value": "Engineer",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "Address",
+									"value": "Dhaka, Bangladesh",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "DiabetesMellitus-Duration",
+									"value": "1",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "DiabetesMellitus-TreatmentStatus",
+									"value": "Not on Treatment",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "DiabetesMellitus-LastCheckUp",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "Hypertension-Duration",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "Hypertension-TreatmentStatus",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "Hypertension-LastCheckUp",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "Hypothyroid-Duration",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "Hypothyroid-TreatmentStatus",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "Hypothyroid-LastCheckUp",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "PreviousReport",
+									"type": "file",
+									"src": "/C:/Sourav Chowdhury/image/labs1.pdf",
+									"disabled": true
+								},
+								{
+									"key": "SmokingHistory-CurrentStatus",
+									"value": "Current Smoker",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "SmokingHistory-NumberPerDay",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "SmokingHistory-YearsSmoked",
+									"value": "2018-01-01",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "DietPreference",
+									"value": "Vegetarian",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "FoodAllergies",
+									"value": "fish",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "MedicationAllergies",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "CurrentDietary",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "PhysicalActivityLevel",
+									"value": "Sendentary",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "SleepHoursPerNight",
+									"value": "7",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "Weight",
+									"value": "68",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "Height",
+									"value": "170",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "BMI",
+									"value": "23.5",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "BP",
+									"value": "120",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "HeartRate",
+									"value": "78",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "RBS",
+									"value": "110",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "Lab-1",
+									"type": "file",
+									"src": "/C:/Sourav Chowdhury/image/labs1.pdf",
+									"disabled": true
+								},
+								{
+									"key": "Lab-2",
+									"type": "file",
+									"src": "/C:/Sourav Chowdhury/image/labs1.pdf",
+									"disabled": true
+								},
+								{
+									"key": "Email",
+									"value": "rimelchowdhury01@gmail.com",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "Gender",
+									"value": "Male",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "BloodType",
+									"value": "A+",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "Name",
+									"value": "Labib12356",
+									"type": "text"
+								},
+								{
+									"key": "Age",
+									"value": "25",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "Phone Number",
+									"value": "+8801712906519",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "accupation",
+									"value": "Engineer",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "Lab1",
+									"type": "file",
+									"src": "/C:/Sourav Chowdhury/image/labs1.pdf",
+									"disabled": true
+								},
+								{
+									"key": "Hobbies.Reading",
+									"value": "ehehfdhdhdf",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "Weight",
+									"value": "10",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "Height",
+									"value": "10",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "waitTime",
+									"value": "0",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "{{local}}/api/v1/patient-registration/create",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"patient-registration",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get single patient by Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{aws}}/api/v1/patient-registration/6929686c18a5c1a66516e203",
+							"host": [
+								"{{aws}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"patient-registration",
+								"6929686c18a5c1a66516e203"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get all patient",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{aws}}/api/v1/patient-registration/getAll",
+							"host": [
+								"{{aws}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"patient-registration",
+								"getAll"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Save report in database",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"patient_id\": \"691956fd4159cc17ee1b1fad\",\r\n  \"medical_analysis\": {\r\n    \"patient_info\": {\r\n      \"gender\": \"Male\",\r\n      \"age\": 23,\r\n      \"occupation\": \"Developer\"\r\n    },\r\n    \"examination_findings\": {\r\n      \"pulses\": {\r\n        \"femoral_pulse\": {\r\n          \"left_limb\": \"Normal\",\r\n          \"right_limb\": \"Normal\"\r\n        },\r\n        \"popliteal_pulse\": {\r\n          \"left_limb\": \"Normal\",\r\n          \"right_limb\": \"Normal\"\r\n        },\r\n        \"dorsalis_pedis_pulse\": {\r\n          \"left_limb\": \"Normal\",\r\n          \"right_limb\": \"Normal\"\r\n        },\r\n        \"posterior_tibial_pulse\": {\r\n          \"left_limb\": \"Normal\",\r\n          \"right_limb\": \"Normal\"\r\n        },\r\n        \"abi\": {\r\n          \"left_limb\": 1,\r\n          \"right_limb\": 1\r\n        }\r\n      },\r\n      \"vital_signs\": {\r\n        \"blood_pressure\": \"120/80 mmHg\",\r\n        \"heart_rate\": 72,\r\n        \"heart_rate_unit\": \"bpm\",\r\n        \"spo2\": 98,\r\n        \"spo2_unit\": \"%\",\r\n        \"temperature\": 36.8,\r\n        \"temperature_unit\": \"°C\"\r\n      },\r\n      \"other_findings\": \"No significant abnormalities noted.\"\r\n    },\r\n    \"risk_stratification\": {\r\n      \"components\": [\r\n        {\r\n          \"component\": \"ARTERIAL\",\r\n          \"risk_group\": \"MILD\",\r\n          \"rationale\": \"Controlled hypertension with normal ABI.\"\r\n        },\r\n        {\r\n          \"component\": \"DIABETIC FOOT ULCER (DFU)\",\r\n          \"risk_group\": \"MODERATE\",\r\n          \"rationale\": \"History of diabetes mellitus requiring regular monitoring.\"\r\n        }\r\n      ]\r\n    },\r\n    \"key_calculations\": {\r\n      \"bmi\": 22.5,\r\n      \"total_tobacco_risk\": \"High\",\r\n      \"bmr_mifflin_st_jeor\": {\r\n        \"value\": 1800,\r\n        \"unit\": \"kcal/day\"\r\n      },\r\n      \"tdee_sedentary\": {\r\n        \"value\": 2160,\r\n        \"unit\": \"kcal/day\"\r\n      },\r\n      \"calorie_goal\": {\r\n        \"value\": 2000,\r\n        \"unit\": \"kcal/day\",\r\n        \"purpose\": \"for weight maintenance\"\r\n      }\r\n    },\r\n    \"individualized_diet_plan\": {\r\n      \"target_calories\": 2000,\r\n      \"unit\": \"kcal/day\",\r\n      \"type\": \"Non-vegetarian\",\r\n      \"meals\": [\r\n        {\r\n          \"time\": \"Breakfast\",\r\n          \"foods\": \"Oatmeal with milk and a banana\",\r\n          \"calories\": 400,\r\n          \"protein\": \"15g\",\r\n          \"carbs\": \"60g\",\r\n          \"fat\": \"10g\"\r\n        },\r\n        {\r\n          \"time\": \"Lunch\",\r\n          \"foods\": \"Grilled chicken with quinoa and vegetables\",\r\n          \"calories\": 600,\r\n          \"protein\": \"40g\",\r\n          \"carbs\": \"50g\",\r\n          \"fat\": \"20g\"\r\n        },\r\n        {\r\n          \"time\": \"Dinner\",\r\n          \"foods\": \"Salmon with brown rice and broccoli\",\r\n          \"calories\": 600,\r\n          \"protein\": \"35g\",\r\n          \"carbs\": \"45g\",\r\n          \"fat\": \"25g\"\r\n        },\r\n        {\r\n          \"time\": \"Snacks\",\r\n          \"foods\": \"Greek yogurt and almonds\",\r\n          \"calories\": 400,\r\n          \"protein\": \"20g\",\r\n          \"carbs\": \"20g\",\r\n          \"fat\": \"30g\"\r\n        }\r\n      ],\r\n      \"totals\": {\r\n        \"calories\": 2000,\r\n        \"protein\": \"110g\",\r\n        \"carbs\": \"175g\",\r\n        \"fat\": \"85g\"\r\n      },\r\n      \"notes\": [\r\n        \"Increase fiber intake.\",\r\n        \"Limit sugar and processed foods.\",\r\n        \"Ensure adequate hydration.\"\r\n      ]\r\n    },\r\n    \"exercise_physiotherapy_plan\": {\r\n      \"recommended_program\": [\r\n        {\r\n          \"activity\": \"Walking\",\r\n          \"description\": \"30 minutes of brisk walking daily.\"\r\n        },\r\n        {\r\n          \"activity\": \"Strength Training\",\r\n          \"description\": \"Twice a week focusing on major muscle groups.\"\r\n        }\r\n      ]\r\n    },\r\n    \"management_advice_triggers\": {\r\n      \"condition_name\": {\r\n        \"status\": \"Stable\",\r\n        \"action\": \"Continue current medication and lifestyle modifications.\"\r\n      },\r\n      \"additional_advice\": \"Regular monitoring of blood glucose and blood pressure is advised.\"\r\n    },\r\n    \"red_flags_emergency_return\": {\r\n      \"seek_immediate_medical_attention_if\": [\r\n        \"Sudden chest pain\",\r\n        \"Severe headache\",\r\n        \"Difficulty breathing\"\r\n      ]\r\n    },\r\n    \"follow_up_plan\": {\r\n      \"specialty_clinic\": \"Endocrinology Clinic every 3 months\",\r\n      \"investigations\": \"HbA1c, Lipid Profile, Thyroid Function Tests\",\r\n      \"medication_review\": \"Every 6 months with primary care physician\",\r\n      \"lifestyle_modifications\": \"Increase physical activity and maintain a balanced diet.\"\r\n    },\r\n    \"integrated_report_summary\": {\r\n      \"main_problems\": \"Diabetes Mellitus, Hypertension, Hypothyroidism\",\r\n      \"critical_findings\": null,\r\n      \"care_plan_summary\": [\r\n        \"Maintain blood glucose levels within target range.\",\r\n        \"Monitor blood pressure regularly.\",\r\n        \"Adhere to prescribed medication regimen.\"\r\n      ],\r\n      \"advisor\": \"AI Medical Assistant\"\r\n    }\r\n  },\r\n  \"generation_timestamp\": \"2025-11-16T04:56:57.955140\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{local}}/api/v1/patient-registration/save-report",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"patient-registration",
+								"save-report"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get single report use patient Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{local}}/api/v1/patient-registration/get-report/69180bc7154982faf2e31233",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"patient-registration",
+								"get-report",
+								"69180bc7154982faf2e31233"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all reports",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{aws}}/api/v1/patient-registration/reports",
+							"host": [
+								"{{aws}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"patient-registration",
+								"reports"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Patient update",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "Substance",
+									"value": "true",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "medical report",
+									"type": "file",
+									"src": "/C:/Sourav Chowdhury/image/labs1.pdf"
+								},
+								{
+									"key": "Name",
+									"value": "Sourav Chowdhury",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "Gender",
+									"value": "Male",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "{{aws}}/api/v1/patient-registration/update/692973bbb0f3e882537780ad",
+							"host": [
+								"{{aws}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"patient-registration",
+								"update",
+								"692973bbb0f3e882537780ad"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": null,
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Event Management",
+			"item": [
+				{
+					"name": "Create camp",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InU0eWtrYzRtNmxAb3pzYWlwLmNvbSIsInJvbGUiOiJVU0VSIiwiaWF0IjoxNzYyMjUyNTk2LCJleHAiOjE3NjM1NDg1OTZ9.Hq-7uOO5qnls5q1Pfx5uVNCL2ngFB4CKaxh3M7oxIwE",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "// {\r\n//   \"campName\": \"Health Awareness Camp 3\",\r\n//   \"location\": \"Dhaka, Bangladesh\",\r\n//   \"status\": \"Ongoing\",\r\n//   \"assignAdmin\": \"John Doe\",\r\n//   \"avgTime\": 6\r\n// }\r\n\r\n\r\n// {\r\n//     \"campName\": \"Health Checkup Camp2\",\r\n//     \"location\": \"Dhaka Medical College\",\r\n//     \"assignAdmin\": \"AdminUser123\",\r\n//     \"startDate\": \"2025-11-27T10:08:00+06:00\",\r\n//     \"endDate\": \"2025-11-28T10:10:00+06:00\",\r\n//     \"avgTime\": 20,\r\n//     \"locationCoords\": {\r\n//         \"type\": \"Point\",\r\n//         \"coordinates\": [\r\n//             90.4125,\r\n//             23.8103\r\n//         ] // longitude, latitude\r\n//     }\r\n// }\r\n\r\n\r\n{\r\n    \"campName\": \"Health Checkup Camp4\",\r\n    \"assignAdmin\": \"AdminUser123\",\r\n    \"startDate\": \"2025-11-29T16:39:00+06:00\",\r\n    \"endDate\": \"2025-11-30T16:41:00+06:00\",\r\n    \"avgTime\": 20,\r\n    \"locationCoords\": {\r\n        \"type\": \"Point\",\r\n        \"coordinates\": [90.6126, 23.8103]\r\n    }\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{aws}}/api/v1/event-management/create",
+							"host": [
+								"{{aws}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"event-management",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get all camp",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{local}}/api/v1/event-management/getAll",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"event-management",
+								"getAll"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get single camp use id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{aws}}/api/v1/event-management/getSingle/692acd8206438f13bf8ed381",
+							"host": [
+								"{{aws}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"event-management",
+								"getSingle",
+								"692acd8206438f13bf8ed381"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update camp by id",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"campName\": \"Updated Camp Name\",\r\n  \"location\": \"Chittagong\",\r\n  \"status\": \"Ongoing\",\r\n  \"assignAdmin\": \"Jane Smith\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{local}}/api/v1/event-management/update/690c0b6e5b1de7722f931a03",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"event-management",
+								"update",
+								"690c0b6e5b1de7722f931a03"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete camp",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{local}}/api/v1/event-management/deletCamp/690c0b6e5b1de7722f931a03",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"event-management",
+								"deletCamp",
+								"690c0b6e5b1de7722f931a03"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Nearby camps",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{local}}/api/v1/event-management/nearby-camps?latitude=23.8103&longitude=90.4125&maxDistance=100000",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"event-management",
+								"nearby-camps"
+							],
+							"query": [
+								{
+									"key": "latitude",
+									"value": "23.8103"
+								},
+								{
+									"key": "longitude",
+									"value": "90.4125"
+								},
+								{
+									"key": "maxDistance",
+									"value": "100000"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Patient management flow",
+			"item": [
+				{
+					"name": "Compliance",
+					"item": [
+						{
+							"name": "Get all compliance",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{local}}/api/v1/patient-management/getAllCompliance",
+									"host": [
+										"{{local}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"patient-management",
+										"getAllCompliance"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get single compliance use patient Management Id",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{local}}/api/v1/patient-management/getSingleCompliance/690b3125007083e8436f0e06",
+									"host": [
+										"{{local}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"patient-management",
+										"getSingleCompliance",
+										"690b3125007083e8436f0e06"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update compliance use patient management id",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"complianceStatus\": \"Complete\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{local}}/api/v1/patient-management/updateComplianceStatus/690b3125007083e8436f0e06",
+									"host": [
+										"{{local}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"patient-management",
+										"updateComplianceStatus",
+										"690b3125007083e8436f0e06"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Export compliance csv",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{local}}/api/v1/patient-management/allCompliance/export/csv",
+									"host": [
+										"{{local}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"patient-management",
+										"allCompliance",
+										"export",
+										"csv"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Add patient",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"patientId\": \"6926db03db35e2e7e2db6753\",\r\n  \"campId\": \"6927de7fa16bde91dd18dd40\",\r\n  \"status\": \"Waiting for Vitals\",\r\n  \"waitTime\": \"2025-11-05T16:30:00Z\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{local}}/api/v1/patient-management/create",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"patient-management",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get all patient flow",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{local}}/api/v1/patient-management/getAll",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"patient-management",
+								"getAll"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get single patient management flow use Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{local}}/api/v1/patient-management/getSingle/6927def9c248791e7638c4e1",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"patient-management",
+								"getSingle",
+								"6927def9c248791e7638c4e1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update patient management flow use Id",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"status\": \"Screening Complete\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{local}}/api/v1/patient-management/update/69199e0362e9ac7e9578f9ba",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"patient-management",
+								"update",
+								"69199e0362e9ac7e9578f9ba"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "User management",
+			"item": [
+				{
+					"name": "Create Staff",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "companyInfo",
+									"value": "{ \"clientName\":\"Sourav4\", \"role\":\"ADMIN\", \"email\":\"sourav1s2d5d4gd@gmail.com\",\"phoneNumber\":\"12345\",\"password\":\"Sc@123456\" }",
+									"type": "text"
+								},
+								{
+									"key": "referrerInfo",
+									"value": "{ \"name\":\"Sc\", \"phoneNumber\":\"999\", \"referralSource\":\"Facebook\" }",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/C:/Sourav Chowdhury/image/sourav.jpg"
+								},
+								{
+									"key": "status",
+									"value": "active",
+									"type": "text"
+								},
+								{
+									"key": "verificationStatus",
+									"value": "verified",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{production}}/api/v1/user-management/create",
+							"host": [
+								"{{production}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"user-management",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get all staff",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{local}}/api/v1/user-management/getAll",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"user-management",
+								"getAll"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get single staff",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{local}}/api/v1/user-management/getSingle/6922cc07a4af3708b3fadbd8",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"user-management",
+								"getSingle",
+								"6922cc07a4af3708b3fadbd8"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update staff",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/C:/Sourav Chowdhury/image/sourav.jpg"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{local}}/api/v1/user-management/update/6922cc07a4af3708b3fadbd8",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"user-management",
+								"update",
+								"6922cc07a4af3708b3fadbd8"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete staff",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{local}}/api/v1/user-management/delete/690c6d66490bdba158d1c88f",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"user-management",
+								"delete",
+								"690c6d66490bdba158d1c88f"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Notifications",
+			"item": [
+				{
+					"name": "Create notification",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"title\": \"Appointment Reminder\",\r\n  \"recipients\": {\r\n    \"type\": \"ALL_PATIENTS\"\r\n  },\r\n  \"subject\": \"Your upcoming appointment\",\r\n  \"message\": \"Dear patient, please remember your appointment.\",\r\n  \"status\": \"SENT\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{local}}/api/v1/notification/create",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"notification",
+								"create"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Configurations",
+			"item": [
+				{
+					"name": "Create configuration",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"sectionName\": \"Medical History\",\r\n  \"fields\": [\r\n\r\n  ]\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{aws}}/api/v1/configuration/create-or-update",
+							"host": [
+								"{{aws}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"configuration",
+								"create-or-update"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update configuration",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"isRequired\": true,\r\n  \"active\": true,\r\n  \"order\": 1\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{local}}/api/v1/configuration/update/Registration/field/Report",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"configuration",
+								"update",
+								"Registration",
+								"field",
+								"Report"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All configuration",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{local}}/api/v1/configuration/getAll",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"configuration",
+								"getAll"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get specific configuration section",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{local}}/api/v1/configuration/Registration",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"configuration",
+								"Registration"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add specific configuration section field",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"fieldName\": \"doctorName\",\r\n  \"fieldType\": \"text\",\r\n  \"isRequired\": true\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{local}}/api/v1/configuration/medical history/add-field",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"configuration",
+								"medical history",
+								"add-field"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete specific configuration section field Copy",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{local}}/api/v1/configuration/Clinical Assessment/Gender",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"configuration",
+								"Clinical Assessment",
+								"Gender"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete specific configuration section use sectionName",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{local}}/api/v1/configuration/delete/by-name/then",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"configuration",
+								"delete",
+								"by-name",
+								"then"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Reports",
+			"item": [
+				{
+					"name": "Upload reports",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "patientId",
+									"value": "6926db03db35e2e7e2db6753",
+									"type": "text"
+								},
+								{
+									"key": "reports",
+									"type": "file",
+									"src": "/C:/Sourav Chowdhury/image/labs1.pdf"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{local}}/api/v1/reports/upload",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"reports",
+								"upload"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get single reports use patient id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{aws}}/api/v1/reports/getSingleReport/6926db03db35e2e7e2db6753",
+							"host": [
+								"{{aws}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"reports",
+								"getSingleReport",
+								"6926db03db35e2e7e2db6753"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Key contacts",
+			"item": [
+				{
+					"name": "Create contact",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"leadCampAdmin\": \"John Doe\",\r\n  \"leadClinician\": \"Dr. Adams\",\r\n  \"EmergencyContact\": \"+1234567890\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{local}}/api/v1/key-contacts/create",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"key-contacts",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get all key contact",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{local}}/api/v1/key-contacts/getAll",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"key-contacts",
+								"getAll"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get single key contact",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{local}}/api/v1/key-contacts/getSingle/692c09d7ec3447927417afa3",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"key-contacts",
+								"getSingle",
+								"692c09d7ec3447927417afa3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update key contact",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"leadCampAdmin\": \"Jane Doe\",\r\n  \"leadClinician\": \"Dr. Adams mc\",\r\n  \"EmergencyContact\": \"+0987654321\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{local}}/api/v1/key-contacts/update/692c09d7ec3447927417afa3",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"key-contacts",
+								"update",
+								"692c09d7ec3447927417afa3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete key contact",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{local}}/api/v1/key-contacts/delete/692c09d7ec3447927417afa3",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"key-contacts",
+								"delete",
+								"692c09d7ec3447927417afa3"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"requests": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"requests": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "local",
+			"value": ""
+		},
+		{
+			"key": "production",
+			"value": ""
+		},
+		{
+			"key": "aws",
+			"value": ""
+		}
+	]
+}
